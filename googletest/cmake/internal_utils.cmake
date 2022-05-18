@@ -84,7 +84,7 @@ macro(config_compiler_and_linker)
     # Ensure MSVC treats source files as UTF-8 encoded.
     set(cxx_base_flags "${cxx_base_flags} -utf-8")
   elseif (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
-    set(cxx_base_flags "-Wall -Wshadow -Wconversion")
+    set(cxx_base_flags "-Wall -Wshadow -Wconversion -Wno-psabi")
     set(cxx_exception_flags "-fexceptions")
     set(cxx_no_exception_flags "-fno-exceptions")
     set(cxx_strict_flags "-W -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch -Wunused-parameter -Wcast-align -Wchar-subscripts -Winline -Wredundant-decls")
